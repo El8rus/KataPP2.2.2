@@ -20,7 +20,7 @@ public class CarServiceImp implements CarService {
 
     @Override
     public List<Car> getCarList(Integer count) {
-        return addCarList().stream().limit(count).collect(Collectors.toList());
+        return addCarList().stream().limit(count < 0 ? 0 : count).collect(Collectors.toList());
     }
 
 }
